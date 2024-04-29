@@ -107,6 +107,7 @@ public class StoveCounter : BaseCounter
             if (!player.HasKitchenObject())
             {
                 GetKitchenObject().SetKitchenObjectParent(player);
+                state = State.idle;
             }
         }
     }
