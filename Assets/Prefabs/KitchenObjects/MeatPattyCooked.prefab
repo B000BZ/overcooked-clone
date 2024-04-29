@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7980851426788294027}
   - component: {fileID: 2873860082256239559}
   m_Layer: 0
-  m_Name: MeatPattyUncooked
+  m_Name: MeatPattyCooked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1288422115936546179}
+  - {fileID: 7074588059011442947}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2873860082256239559
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080d0770831464e63ac9c1747f1bd2f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenObjectSO: {fileID: 11400000, guid: ed9b5a194d78940c0810d6b9a1f67fd6, type: 2}
---- !u!1001 &2669343879330740995
+  kitchenObjectSO: {fileID: 11400000, guid: 484b68b16550243d7b70d036c20ff761, type: 2}
+--- !u!1001 &6253234134133538691
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -54,69 +54,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7980851426788294027}
     m_Modifications:
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3812876574508226177, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+    - target: {fileID: 3812876574508226177, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
         type: 3}
       propertyPath: m_Name
-      value: MeatPattyUncooked_Visual
+      value: MeatPattyCooked_Visual
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 21b2fcdae015b8c4c83ff4b68b31b06f, type: 3}
---- !u!4 &1288422115936546179 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: e879ff1414d1dd64c9ad7b04bffdfaef, type: 3}
+--- !u!4 &7074588059011442947 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3812876574508226176, guid: 21b2fcdae015b8c4c83ff4b68b31b06f,
+  m_CorrespondingSourceObject: {fileID: 3812876574508226176, guid: e879ff1414d1dd64c9ad7b04bffdfaef,
     type: 3}
-  m_PrefabInstance: {fileID: 2669343879330740995}
+  m_PrefabInstance: {fileID: 6253234134133538691}
   m_PrefabAsset: {fileID: 0}

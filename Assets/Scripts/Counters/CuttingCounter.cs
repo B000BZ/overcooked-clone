@@ -35,17 +35,13 @@ public class CuttingCounter : BaseCounter
 
                     CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeWithInput(GetKitchenObject().GetKitchenObjectSO());
 
-
                     OnProgressChanged?.Invoke(this, new OnProgressChangedEventArgs
                     {
                         progressNormalized = (float)cuttingProgress / cuttingRecipeSO.cuttingProgressMax
 
                     });
                 }
-                
             }
-
-
         }
         else
         {
@@ -54,9 +50,6 @@ public class CuttingCounter : BaseCounter
                 GetKitchenObject().SetKitchenObjectParent(player);
             }
         }
-
-
-    
     }
 
     public override void InteractAlternate(Player player)
