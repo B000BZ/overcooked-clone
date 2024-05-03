@@ -47,8 +47,11 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
             }
         }
     }
+    public override void InteractAlternate(Player player)
+    {
+        Debug.Log("interact_alternate");
+    }
 
-    
 }
 
  

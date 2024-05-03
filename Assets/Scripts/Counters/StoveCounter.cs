@@ -251,4 +251,9 @@ public class StoveCounter : BaseCounter, IHasProgress
         return null;
     }
 
+    public override void InteractAlternate(Player player)
+    {
+        Debug.Log("interact_alternate");
+    }
+
 }   
