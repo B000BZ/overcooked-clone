@@ -16,4 +16,9 @@ public class DeliveryCounter : BaseCounter
         }
 
     }
+
+    public override void InteractAlternate(Player player)
+    {
+        Debug.Log("interact alternate");
+    }
 }
