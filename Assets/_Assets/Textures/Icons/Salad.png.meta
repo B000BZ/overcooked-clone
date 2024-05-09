@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8559917bb5484ecbbb0e22def47aa8c
+guid: 7bae43824216b4db1bfaf6d6ca214082
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 202, y: 110, z: 147, w: 272}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -95,18 +95,240 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_0"
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 89
+        width: 470
+        height: 370
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809b4f60e7d8b44f0b8cb5fd1082d5f0
+      internalID: -251309097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_1"
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 447
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac4d674658564ab6bc02ceabe3dd217
+      internalID: -1588239039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_4"
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 190
+        width: 31
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00404176ba1b148329cd18bb0efd2dc8
+      internalID: -1213326087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_5"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 342
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf827e2293584303aef70895d647e9d
+      internalID: 1167791006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_7"
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 184
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad9e4c60e14a41dc8aadb3170ae1750
+      internalID: 338471692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_8"
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 187
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60829ce72b914e24a3a92c1c8d28568
+      internalID: 1819509980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_9"
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 178
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c9305da40a8a4583b6cb525fd72e4a9
+      internalID: -1981913963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_10"
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 160
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658851806d22e4f09b024372418c6af5
+      internalID: 1366042249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_11"
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 104
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b241c8cd1ad4bfa9815508082db39e
+      internalID: -1453139576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_2"
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 196
+        width: 3
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d68a3092f81406aafaed3450303263
+      internalID: -137727628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    spriteID: 50190afcb276a483e9532d39eff2eab1
+    internalID: -402310222
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_0": -251309097
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_1": -1588239039
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_10": 1366042249
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_11": -1453139576
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_2": -137727628
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_3": -1720530045
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_4": -1213326087
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_5": 1167791006
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_6": -79224452
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_7": 338471692
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_8": 1819509980
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.46.53 copy copy3_9": -1981913963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

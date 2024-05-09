@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba60cc2bdfbfa4522b3a617a9aa7ef4c
+guid: a0e54ad52d62041ab90220c5c936c200
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,18 +95,40 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.45.09 copy copy_0"
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 146
+        width: 507
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee3707d13b834d5ab083e1989bb73ff
+      internalID: 1446296843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 5aab722bde451433e84a6d1087c44e7e
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Capture d\u2019e\u0301cran 2024-05-09 a\u0300 12.45.09 copy copy_0": 1446296843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

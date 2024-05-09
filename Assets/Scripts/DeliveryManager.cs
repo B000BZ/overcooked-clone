@@ -11,7 +11,7 @@ public class DeliveryManager : MonoBehaviour
     private List<RecipeSO> waitingRecipeSOList;
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
-    private int waitingRecipeMax = 8;
+    private int waitingRecipeMax = 5;
 
     private void Awake()
     {
@@ -69,7 +69,7 @@ public class DeliveryManager : MonoBehaviour
                 if (plateContentMatchesRecipe)
                 {
                     waitingRecipeSOList.RemoveAt(0);
-                    OrdersUiManager.instance.RemoveOrder(OrdersUiManager.instance._orders[0]);
+                    OrdersUiManager.instance.OrderDone(OrdersUiManager.instance._orders[0]);
                     return;
                 }
             }

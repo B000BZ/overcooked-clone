@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e658bab460ab04459abfafef9d2ddce9, type: 3}
   m_Name: CheeseBurger
   m_EditorClassIdentifier: 
+  earnedSettings:
+    coinsEarned: {x: 5, y: 10}
+    timeInterval: {x: 0, y: 60, z: 90}
   kitchenObjectSOList:
   - {fileID: 11400000, guid: 8c7c751563a144740a4780cc2fd70dcc, type: 2}
   - {fileID: 11400000, guid: 484b68b16550243d7b70d036c20ff761, type: 2}
   - {fileID: 11400000, guid: 3084a8af88d574234a8d40bedd87865b, type: 2}
   recipeName: CheeseBurger
-  recipeIcon: {fileID: 21300000, guid: 549cb4f2b86d1b84d8cd41c1cfde26c8, type: 3}
+  recipeIcon: {fileID: 1446296843, guid: a0e54ad52d62041ab90220c5c936c200, type: 3}

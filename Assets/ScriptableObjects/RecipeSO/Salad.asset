@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e658bab460ab04459abfafef9d2ddce9, type: 3}
   m_Name: Salad
   m_EditorClassIdentifier: 
+  earnedSettings:
+    coinsEarned: {x: 5, y: 10}
+    timeInterval: {x: 0, y: 30, z: 60}
   kitchenObjectSOList:
   - {fileID: 11400000, guid: 96eece95e095642c68e8073741cfb9f9, type: 2}
   - {fileID: 11400000, guid: d6f58ccab0a3d4c02b1af41bc9df624a, type: 2}
   recipeName: Salad
-  recipeIcon: {fileID: 21300000, guid: e1c23b5aded59d84da30738d3267a6c9, type: 3}
+  recipeIcon: {fileID: 21300000, guid: 7bae43824216b4db1bfaf6d6ca214082, type: 3}

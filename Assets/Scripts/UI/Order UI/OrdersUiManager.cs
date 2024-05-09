@@ -28,11 +28,26 @@ public class OrdersUiManager : MonoBehaviour
         _orders.Add(m_order);
 
         m_order.Init(recipe);
+
+        if (_orders.Count == 1)
+            UpdateCurrentOrder();
+    }
+
+    public void OrderDone(OrderUi order)
+    {
+        order.OrderDone();
     }
 
     public void RemoveOrder(OrderUi orderUi)
     {
         _orders.Remove(orderUi);
         Destroy(orderUi.gameObject);
+
+        UpdateCurrentOrder();
+    }
+
+    public void UpdateCurrentOrder()
+    {
+        _orders[0].ActiveOrder(true);
     }
 }
