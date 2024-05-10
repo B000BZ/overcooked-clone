@@ -39,10 +39,11 @@ public class OrderUi : MonoBehaviour
     [SerializeField] private RectTransform _orderHolder;
     [SerializeField] private RectTransform[] _ingrediantsParent;
 
+    private int _coinsEarned;
     private float _timer;
     private float _currentTime;
     private bool _startTime;
-    private bool _timesUp;
+    
 
     private RecipeSO _recipe;
 
@@ -77,9 +78,6 @@ public class OrderUi : MonoBehaviour
         //Stop Time
         _startTime = false;
         
-
-        //Calculate Earned Coins
-        CalculateEarning();
 
         _orderDoneEffect.DOFade(0.80f, 0.15f).OnComplete(() =>
         {
@@ -124,9 +122,19 @@ public class OrderUi : MonoBehaviour
         
     }
 
-    public void CalculateEarning()
+    public int CalculateEarning(float _currentTime)
     {
-       
+        float _finishTime = _currentTime;
+        if (_finishTime <= _recipe.earnedSettings.timeInterval.z && _finishTime > _recipe.earnedSettings.timeInterval.y)
+        {
+            return (int)_recipe.earnedSettings.coinsEarned.y;
+        }
+        else if (_finishTime <= _recipe.earnedSettings.timeInterval.y && _finishTime > _recipe.earnedSettings.timeInterval.x)
+        {
+            return (int)_recipe.earnedSettings.coinsEarned.x;
+        }
+        else return 0;
+
     }
 
     public void StartTimer()
@@ -177,5 +185,10 @@ public class OrderUi : MonoBehaviour
             });
         }
         
+    }
+    public int GetEarnedCoins()
+    {
+        _coinsEarned = CalculateEarning(_currentTime);
+        return _coinsEarned;
     }
 }

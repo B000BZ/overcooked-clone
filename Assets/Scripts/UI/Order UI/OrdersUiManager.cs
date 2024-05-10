@@ -36,6 +36,8 @@ public class OrdersUiManager : MonoBehaviour
     public void OrderDone(OrderUi order)
     {
         order.OrderDone();
+        
+
     }
 
     public void OrderFail(OrderUi order)
@@ -54,5 +56,11 @@ public class OrdersUiManager : MonoBehaviour
     public void UpdateCurrentOrder()
     {
         _orders[0].ActiveOrder(true);
+    }
+
+    public int GetCoinsEarned(OrderUi order)
+    {
+        
+        return order.GetEarnedCoins();
     }
 }

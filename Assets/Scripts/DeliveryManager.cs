@@ -68,8 +68,10 @@ public class DeliveryManager : MonoBehaviour
 
                 if (plateContentMatchesRecipe)
                 {
+                    CoinsUi.instance.UpdateCoins(OrdersUiManager.instance.GetCoinsEarned(OrdersUiManager.instance._orders[0]));
                     waitingRecipeSOList.RemoveAt(0);
                     OrdersUiManager.instance.OrderDone(OrdersUiManager.instance._orders[0]);
+                    
                     return;
                 }
             }
