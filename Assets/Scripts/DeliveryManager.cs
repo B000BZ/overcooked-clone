@@ -73,10 +73,9 @@ public class DeliveryManager : MonoBehaviour
                     return;
                 }
             }
-
-        Debug.Log("wrong recipe");
+        waitingRecipeSOList.RemoveAt(0);
+        OrdersUiManager.instance.OrderFail(OrdersUiManager.instance._orders[0]);
         return;
-
     }
 
 

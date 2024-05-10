@@ -38,6 +38,11 @@ public class OrdersUiManager : MonoBehaviour
         order.OrderDone();
     }
 
+    public void OrderFail(OrderUi order)
+    {
+        order.OrderFail();
+    }
+
     public void RemoveOrder(OrderUi orderUi)
     {
         _orders.Remove(orderUi);

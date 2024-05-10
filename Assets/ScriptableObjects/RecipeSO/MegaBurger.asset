@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnedSettings:
     coinsEarned: {x: 5, y: 10}
-    timeInterval: {x: 0, y: 90, z: 120}
+    timeInterval: {x: 0, y: 5, z: 30}
   kitchenObjectSOList:
   - {fileID: 11400000, guid: 8c7c751563a144740a4780cc2fd70dcc, type: 2}
   - {fileID: 11400000, guid: 484b68b16550243d7b70d036c20ff761, type: 2}

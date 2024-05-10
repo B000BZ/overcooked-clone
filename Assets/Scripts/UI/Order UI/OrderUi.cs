@@ -7,9 +7,31 @@ using TMPro;
 
 public class OrderUi : MonoBehaviour
 {
+
+    IEnumerator Loop()
+    {
+        float m_size = m_startEffect ? 4f : 2f;
+        float m_currentSize = m_startEffect ? 2f : 4f;
+
+        while (m_startEffect ? (m_currentSize < m_size) : (m_currentSize >= m_size))
+        {
+            yield return null;
+
+            if (m_startEffect)
+                m_currentSize += 0.1f;
+            else
+                m_currentSize -= 0.1f;
+
+            _orderOutline.effectDistance = new Vector2(m_currentSize, m_currentSize);
+        }
+
+        m_startEffect = !m_startEffect;
+        StartCoroutine(Loop());
+    }
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Outline _orderOutline;
     [SerializeField] private Image _orderDoneEffect;
+    [SerializeField] private Image _orderFailEffect;
     [SerializeField] private Image _dishIcon;
     [SerializeField] private Image[] _ingrediantsIcon;
     [SerializeField] private TextMeshProUGUI _timerText;
@@ -20,6 +42,7 @@ public class OrderUi : MonoBehaviour
     private float _timer;
     private float _currentTime;
     private bool _startTime;
+    private bool _timesUp;
 
     private RecipeSO _recipe;
 
@@ -28,7 +51,7 @@ public class OrderUi : MonoBehaviour
         _recipe = recipe;
         _dishIcon.sprite = recipe.recipeIcon;
         _timer = recipe.earnedSettings.timeInterval.z;
-      
+
         int minutes = Mathf.FloorToInt(_timer / 60);
         int seconds = Mathf.FloorToInt(_timer % 60);
         _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
@@ -53,6 +76,7 @@ public class OrderUi : MonoBehaviour
     {
         //Stop Time
         _startTime = false;
+        
 
         //Calculate Earned Coins
         CalculateEarning();
@@ -69,6 +93,12 @@ public class OrderUi : MonoBehaviour
                 });
             });
         });
+    }
+
+    public void OrderFail()
+    {
+        Debug.Log("wrong recipe");
+        TimesUp();
     }
 
 
@@ -91,26 +121,7 @@ public class OrderUi : MonoBehaviour
             StopCoroutine(Loop());
         }
 
-        IEnumerator Loop()
-        {
-            float m_size = m_startEffect ? 4f : 2f;
-            float m_currentSize = m_startEffect ? 2f : 4f;
-
-            while (m_startEffect ? (m_currentSize < m_size) : (m_currentSize >= m_size))
-            {
-                yield return null;
-
-                if (m_startEffect)
-                    m_currentSize += 0.1f;
-                else
-                    m_currentSize -= 0.1f;
-
-                _orderOutline.effectDistance = new Vector2(m_currentSize, m_currentSize);
-            }
-
-            m_startEffect = !m_startEffect;
-            StartCoroutine(Loop());
-        }
+        
     }
 
     public void CalculateEarning()
@@ -123,17 +134,48 @@ public class OrderUi : MonoBehaviour
         _timer = _recipe.earnedSettings.timeInterval.z;
 
         _startTime = true;
-    }
 
+    }
     private void Update()
     {
         if (_startTime)
         {
             _timer -= Time.deltaTime;
-            int minutes = Mathf.FloorToInt(_timer / 60);
-            int seconds = Mathf.FloorToInt(_timer % 60);
-
+            _currentTime = _timer;
+            if (_currentTime <= 0f)
+            {
+                _timerText.gameObject.SetActive(false);
+                TimesUp();
+            }
+            uint minutes =(uint) Mathf.FloorToInt(_timer / 60);
+            uint seconds =(uint) Mathf.FloorToInt(_timer % 60);
             _timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+
         }
+ 
+    }
+
+    private void TimesUp()
+    {
+        if (_startTime == true)
+        {
+            _startTime = false;
+            _orderOutline.enabled = false;
+            StopCoroutine(Loop());
+            _orderFailEffect.DOFade(0.80f, 0.15f).OnComplete(() =>
+            {
+                _orderFailEffect.DOFade(0f, 0.15f).OnComplete(() =>
+                {
+                    _orderHolder.DOAnchorPosY(1000f, 0.7f).SetEase(Ease.InOutCirc)
+                    .OnComplete(() =>
+                    {
+                        //Remove order from list & Destroy it
+                        OrdersUiManager.instance.RemoveOrder(this);
+                    });
+                });
+            });
+        }
+        
     }
 }
