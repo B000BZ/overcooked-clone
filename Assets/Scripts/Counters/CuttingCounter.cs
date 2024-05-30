@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class CuttingCounter : BaseCounter, IHasProgress
 {
+    
 
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
 
-
+    public static event EventHandler OnAnyCut;
+    public static event EventHandler OnPlayerItemPickup;
+    public static event EventHandler OnPlayerItemDrop;
     public event EventHandler OnCut;
-
 
 
 
@@ -27,6 +29,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
                 if (HasRecipeForInput(player.GetKitchenObject().GetKitchenObjectSO()))
                 {
                     player.GetKitchenObject().SetKitchenObjectParent(this);
+                    OnPlayerItemDrop?.Invoke(this, EventArgs.Empty);
                     cuttingProgress = 0;
 
                     CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeWithInput(GetKitchenObject().GetKitchenObjectSO());
@@ -44,6 +47,8 @@ public class CuttingCounter : BaseCounter, IHasProgress
             if (!player.HasKitchenObject())
             {
                 GetKitchenObject().SetKitchenObjectParent(player);
+                OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
+
             }
             else
             {
@@ -52,6 +57,8 @@ public class CuttingCounter : BaseCounter, IHasProgress
                     if (plateKitchenObject.TryAddIngredients(GetKitchenObject().GetKitchenObjectSO()))
                     { 
                         GetKitchenObject().DestroySelf();
+                        OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
+
                     }
                 }
             }
@@ -69,6 +76,7 @@ public class CuttingCounter : BaseCounter, IHasProgress
                 cuttingProgress++;
 
                 OnCut?.Invoke(this, EventArgs.Empty);
+                OnAnyCut?.Invoke(this, EventArgs.Empty); 
 
                 CuttingRecipeSO cuttingRecipeSO = GetCuttingRecipeWithInput(GetKitchenObject().GetKitchenObjectSO());
 

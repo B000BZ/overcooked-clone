@@ -1,9 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ClearCounter : BaseCounter, IKitchenObjectParent
 {
+
+    public static event EventHandler OnPlayerItemPickup;
+    public static event EventHandler OnPlayerItemDrop;
+
+
 
 
 
@@ -14,6 +20,8 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
             if (player.HasKitchenObject())
             {
                 player.GetKitchenObject().SetKitchenObjectParent(this);
+                OnPlayerItemDrop?.Invoke(this, EventArgs.Empty);
+                
             }
              
             
@@ -23,6 +31,8 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
             if (!player.HasKitchenObject())
             {
                 GetKitchenObject().SetKitchenObjectParent(player);
+                OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
+
             }
             else
             {
@@ -31,6 +41,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
                     if (plateKitchenObject.TryAddIngredients(GetKitchenObject().GetKitchenObjectSO()))
                     {
                         GetKitchenObject().DestroySelf();
+                        OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
                     }
                 }
                 else
@@ -40,6 +51,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
                        if (plateKitchenObject.TryAddIngredients(player.GetKitchenObject().GetKitchenObjectSO()))
                         {
                             player.GetKitchenObject().DestroySelf();
+                            OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
 
                         }
                     }

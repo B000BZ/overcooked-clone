@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,3 +20,5 @@ public struct EarnedSettings
     public Vector2 coinsEarned;
     public Vector3 timeInterval;
 }
+
+
