@@ -60,7 +60,7 @@ public class OrderUi : MonoBehaviour
         //Holder Move to position 0
         _orderHolder.DOAnchorPosX(0f, 0.5f).SetEase(Ease.InOutCirc).OnComplete(() =>
         {
-            //Show ingrediants using Dotween animation
+            //Show ingredients using Dotween animation
             for (int i = 0; i < recipe.kitchenObjectSOList.Count; i++)
             {
                 _ingrediantsParent[i].gameObject.SetActive(true);
