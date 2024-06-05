@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,25 @@ using UnityEngine;
 public class ClearCounter : BaseCounter, IKitchenObjectParent
 {
 
+    public static event EventHandler OnPlayerItemPickup;
+    public static event EventHandler OnPlayerItemDrop;
+
+     public static void ResetStaticData()
+    {
+        OnPlayerItemPickup = null;
+        OnPlayerItemDrop = null;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("trigger enter");
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("trigger exit");
+    }
 
 
     public override void Interact(Player player)
@@ -14,6 +34,8 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
             if (player.HasKitchenObject())
             {
                 player.GetKitchenObject().SetKitchenObjectParent(this);
+                OnPlayerItemDrop?.Invoke(this, EventArgs.Empty);
+                
             }
              
             
@@ -23,6 +45,8 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
             if (!player.HasKitchenObject())
             {
                 GetKitchenObject().SetKitchenObjectParent(player);
+                OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
+
             }
             else
             {
@@ -31,6 +55,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
                     if (plateKitchenObject.TryAddIngredients(GetKitchenObject().GetKitchenObjectSO()))
                     {
                         GetKitchenObject().DestroySelf();
+                        OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
                     }
                 }
                 else
@@ -40,6 +65,7 @@ public class ClearCounter : BaseCounter, IKitchenObjectParent
                        if (plateKitchenObject.TryAddIngredients(player.GetKitchenObject().GetKitchenObjectSO()))
                         {
                             player.GetKitchenObject().DestroySelf();
+                            OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
 
                         }
                     }

@@ -55,7 +55,10 @@ public class OrdersUiManager : MonoBehaviour
 
     public void UpdateCurrentOrder()
     {
-        _orders[0].ActiveOrder(true);
+        if (_orders.Count != 0)
+        {
+            _orders[0].ActiveOrder(true);
+        }
     }
 
     public int GetCoinsEarned(OrderUi order)

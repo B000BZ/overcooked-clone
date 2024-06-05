@@ -217,6 +217,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191804895329803830, guid: 882de6cca542146aab1236193130c1b9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191804895329803830, guid: 882de6cca542146aab1236193130c1b9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191804895329803830, guid: 882de6cca542146aab1236193130c1b9,
+        type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191804895329803830, guid: 882de6cca542146aab1236193130c1b9,
+        type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2246648305475621313, guid: 882de6cca542146aab1236193130c1b9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -313,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fc5e2735334445db3a22429f2c7380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kitchenObjectSO: {fileID: 11400000, guid: dc55182e20d8841039c0f2cae891fe5d, type: 2}
   counterTopPoint: {fileID: 32082910556629973}
 --- !u!4 &4629218073503226805 stripped
 Transform:

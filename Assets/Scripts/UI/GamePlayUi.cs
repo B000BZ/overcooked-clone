@@ -1,18 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GamePlayUi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GamePlayUi Instance { get; private set; }
+    [SerializeField] private Button menuButton;
+
+    public event EventHandler OnMenuButtonClick;
+
+    private void Awake()
     {
         
+
+        menuButton.onClick.AddListener(() =>
+        {
+            OnMenuButtonClick?.Invoke(this, EventArgs.Empty);
+        });
+
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

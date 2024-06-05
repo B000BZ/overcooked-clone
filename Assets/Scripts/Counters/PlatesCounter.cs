@@ -8,8 +8,13 @@ public class PlatesCounter : BaseCounter
 
     public event EventHandler OnPlateSpawned;
     public event EventHandler OnPlateTaken;
+    public static event EventHandler OnPlayerItemPickup;
 
 
+    public static void ResetStaticData()
+    {
+        OnPlayerItemPickup = null;
+    }
 
     [SerializeField] private KitchenObjectSO platesKitchenObjectSO;
 
@@ -50,6 +55,7 @@ public class PlatesCounter : BaseCounter
                 spawnedPlatesAmount--;
 
                 OnPlateTaken?.Invoke(this, EventArgs.Empty);
+                OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
             }
         }
     }

@@ -6,9 +6,19 @@ using UnityEngine;
 public class StoveCounter : BaseCounter, IHasProgress
 {
 
+ 
+    public static event EventHandler OnPlayerItemPickup;
+    public static event EventHandler OnPlayerItemDrop;
+
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
 
     public event EventHandler<OnChangedStateEventArgs> OnChangedState;
+
+     public static void ResetStaticData()
+    {
+        OnPlayerItemPickup = null;
+        OnPlayerItemDrop = null;
+    }
 
     public class OnChangedStateEventArgs: EventArgs
     {
@@ -46,7 +56,7 @@ public class StoveCounter : BaseCounter, IHasProgress
             switch (state)
             {
                 case State.idle:
-                    Debug.Log("idle!");
+                    
 
 
                     break;
@@ -64,7 +74,7 @@ public class StoveCounter : BaseCounter, IHasProgress
                         
                         state = State.fried;
                         burningProgress = 0f;
-                        burningRecipeSO = GetBurningRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
+                        burningRecipeSO = GetBurningRecipeWithInput(GetKitchenObject().GetKitchenObjectSO());
 
                         OnChangedState?.Invoke(this, new OnChangedStateEventArgs{
                             state = state
@@ -114,7 +124,8 @@ public class StoveCounter : BaseCounter, IHasProgress
             {
                 if (HasRecipeForInput(player.GetKitchenObject().GetKitchenObjectSO()))
                 {
-                    player.GetKitchenObject().SetKitchenObjectParent(this);                    
+                    player.GetKitchenObject().SetKitchenObjectParent(this);
+                    OnPlayerItemDrop?.Invoke(this, EventArgs.Empty);
 
                     fryingRecipeSO = GetFryingRecipeWithInput(GetKitchenObject().GetKitchenObjectSO());
                     state = State.frying;
@@ -134,8 +145,9 @@ public class StoveCounter : BaseCounter, IHasProgress
                 else if (HasBurningRecipeForInput(player.GetKitchenObject().GetKitchenObjectSO()))
                 {
                     player.GetKitchenObject().SetKitchenObjectParent(this);
+                    OnPlayerItemDrop?.Invoke(this, EventArgs.Empty);
 
-                    burningRecipeSO = GetBurningRecipeSOWithInput(GetKitchenObject().GetKitchenObjectSO());
+                    burningRecipeSO = GetBurningRecipeWithInput(GetKitchenObject().GetKitchenObjectSO());
                     state = State.fried;
                     burningProgress = 0f;
 
@@ -164,6 +176,7 @@ public class StoveCounter : BaseCounter, IHasProgress
             if (!player.HasKitchenObject())
             {
                 GetKitchenObject().SetKitchenObjectParent(player);
+                OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
                 state = State.idle;
                 OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
                 {
@@ -184,6 +197,7 @@ public class StoveCounter : BaseCounter, IHasProgress
                     if (plateKitchenObject.TryAddIngredients(GetKitchenObject().GetKitchenObjectSO()))
                     {
                         GetKitchenObject().DestroySelf();
+                        OnPlayerItemPickup?.Invoke(this, EventArgs.Empty);
 
                         state = State.idle;
                         OnProgressChanged?.Invoke(this, new IHasProgress.OnProgressChangedEventArgs
@@ -210,23 +224,12 @@ public class StoveCounter : BaseCounter, IHasProgress
     }
     private bool HasBurningRecipeForInput(KitchenObjectSO inputKitchenObjectSO)
     {
-        BurningRecipeSO burningRecipeSO = GetBurningRecipeSOWithInput(inputKitchenObjectSO);
+        BurningRecipeSO burningRecipeSO = GetBurningRecipeWithInput(inputKitchenObjectSO);
         return burningRecipeSO != null;
     }
 
 
-    private KitchenObjectSO GetOutputForInput(KitchenObjectSO inputKitchenObjectSO)
-    {
-        FryingRecipeSO fryingRecipeSO = GetFryingRecipeWithInput(inputKitchenObjectSO);
-        if (fryingRecipeSO != null)
-        {
-            return fryingRecipeSO.output;
-        }
-        else
-        {
-            return null;
-        }
-    }
+
 
     private FryingRecipeSO GetFryingRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
@@ -239,7 +242,7 @@ public class StoveCounter : BaseCounter, IHasProgress
         }
         return null;
     }
-    private BurningRecipeSO GetBurningRecipeSOWithInput(KitchenObjectSO inputKitchenObjectSO)
+    private BurningRecipeSO GetBurningRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
     {
         foreach (BurningRecipeSO burningRecipeSO in burningRecipeSOArray)
         {

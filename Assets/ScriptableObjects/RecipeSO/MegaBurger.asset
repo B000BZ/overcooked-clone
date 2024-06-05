@@ -19,5 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8c7c751563a144740a4780cc2fd70dcc, type: 2}
   - {fileID: 11400000, guid: 484b68b16550243d7b70d036c20ff761, type: 2}
   - {fileID: 11400000, guid: 3084a8af88d574234a8d40bedd87865b, type: 2}
+  - {fileID: 11400000, guid: d6f58ccab0a3d4c02b1af41bc9df624a, type: 2}
+  - {fileID: 11400000, guid: 96eece95e095642c68e8073741cfb9f9, type: 2}
   recipeName: MegaBurger
   recipeIcon: {fileID: -1258543082, guid: 082367ae83d8041baa02ad109bc97e94, type: 3}
